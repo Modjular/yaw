@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "yaw"
+version = "0.1.0"
+description = ""
+authors = ["Tony Reksoatmodjo <toscarreks@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.3"
+redis = "^5.0.5"
+napari = { extras = ["all"], version = "^0.4.19" }
+tifffile = "^2024.5.22"
+lxml-html-clean = "^0.1.1"
+flask-sock = "^0.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

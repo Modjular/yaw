@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Device Orientation</title>
+  </head>
+  <body>
+    <h1>Device Orientation Data</h1>
+    <div id="address"></div>
+    <div id="data">
+      <p>Roll: <span id="roll"></span></p>
+      <p>Pitch: <span id="pitch"></span></p>
+      <p>Yaw: <span id="yaw"></span></p>
+    </div>
+    <script src="{{ url_for('static', filename='orientation.js') }}"></script>
+  </body>
+</html>
