@@ -17,11 +17,31 @@ def yaw_widget(viewer: napari.Viewer):
     def callback(message):
         orientation = json.loads(message['data'])
 
+        # angles = (
+        #     -orientation['roll'],
+        #     -orientation['yaw'],
+        #     orientation['pitch'] + 90,
+        # )
+
+        # 𝛼: An angle can range between 0 and 360 degrees
+        # 𝛽: An Angle between −180 and 180 degrees
+        # 𝛾: An Angle between −90 to 90 degrees
+
+        # Experimentally determined
         angles = (
-            -orientation['roll'],
-            -orientation['yaw'],
-            orientation['pitch'] + 90,
+            # -orientation['roll'],   # gamma Y
+            0,
+            -orientation['yaw'],     # alpha Z
+            # orientation['pitch'],   # beta  X
+            90,
         )
+
+        # Vispy Order: ZXY (yaw, pitch, roll), (alpha, beta, gamma)
+        # angles = (
+        #     orientation['yaw'],     # alpha Z
+        #     orientation['pitch'],   # beta  X
+        #     orientation['roll'],    # gamma Y
+        # )
 
         viewer.camera.angles = angles
 
